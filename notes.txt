@@ -1,0 +1,12 @@
+========================================================================================================
+
+1. Extract Features
+2. Train model
+3. Predict from the pre-trained model
+
+--------------------------------------------------------------------------------------------------------------
+
+Given a text (sentence), we represent it as a vector. We do this by using a vocabulary(of words) and then in our vector, assigning 0s and 1s/2s.. depending on the occurrence of that word in the sentence
+
+--------------------------------------------------------------------------------------------------------------
+
