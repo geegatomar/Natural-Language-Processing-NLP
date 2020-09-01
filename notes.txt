@@ -8,5 +8,49 @@
 
 Given a text (sentence), we represent it as a vector. We do this by using a vocabulary(of words) and then in our vector, assigning 0s and 1s/2s.. depending on the occurrence of that word in the sentence
 
+But the drawback of this is that the vector is very sparse (mostly 0s), because the vocabulary has ALL the english words, hence most values in vector will be 0.
 --------------------------------------------------------------------------------------------------------------
+
+Preprocessing:
+. Tokenizing the string
+. Lowercasing
+. Removing stop words and punctuation
+. Stemming
+
+1. Removing Stop words and punctuations of words from the sentence. Stop words is a list of words such as [and, or, is, am..]
+2. Stemming and lowercasing: Convert all words to their original stems. This helps reduce vocabulary as number of words is reduced. Example: tuned, tune, tuning are all words from the same stem "tune"
+
+-------------------------------------------------------------------------------------------------------------
+
+Naive Bayes is used heavily for text analysis
+It allows to compute conditional probabilities
+P(X|Y) = P(Y|X) * (P(X)/P(Y))
+
+Then apply the naive bayes inference rule for binary classification
+-------------------------------------------------------------------------------------------------------------
+VECTOR SPACE MODELS
+
+Vector Space models are used to identify similiarity between pair of sentences:
+ex: (these 2 sentences have different words, but the same meaning)
+What is your age?
+How old are you?
+
+
+2 designs to obtain vector spaces by occurrences and co-occurrences of words:
+
+Word by word design
+Number of times they occur together within a certain distance k
+
+Word by document design
+Number of times a word occurs within a certain category
+
+
+Similiarity functions (to obtain similiarity between the vecotrs we defined in the vector space):
+1. Euclidean Distance
+	np.linalg.norm(a-b)
+2. Cosin Similiarity
+	cosine of the angle between the 2 vectors which is calculated as the dot product of the two vectors by their euclidian dist squared
+-------------------------------------------------------------------------------------------------------------
+corpus: collection of written text
+
 
