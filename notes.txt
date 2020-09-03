@@ -50,7 +50,71 @@ Similiarity functions (to obtain similiarity between the vecotrs we defined in t
 	np.linalg.norm(a-b)
 2. Cosin Similiarity
 	cosine of the angle between the 2 vectors which is calculated as the dot product of the two vectors by their euclidian dist squared
+	
+We use PCA for dimensionality reduction
+This is projected to reduce dimensions. Projection is done using eigen vectors and eigen values.
+
+
+kNNs can be used to find similiar words when doing language translation from one language to another
+
+Locality Sensitive Hashing
 -------------------------------------------------------------------------------------------------------------
 corpus: collection of written text
+
+-------------------------------------------------------------------------------------------------------------
+
+Auto correct and minimum distance
+
+Identify a mispelled word (that doesnt occur in dictionary), Find words which are 'n' edit distances away; filter candidates, and calculate word probabilities 
+
+-------------------------------------------------------------------------------------------------------------
+
+Parts of speech tagging
+Applications:
+1. Reference to words, ex ; 'it'
+2. Checking the validity(grammatically) of a sentence by checking how likely a word is to occur
+
+
+Markov Chains
+They have the probabilities of one tag occurring after another tag. To find the probability of tag (part of speech) to occur (i.e predicting the next state), we only do it on basis of the current state. (only depeneds on the current state you are in, simplistic model, doesnt look at words before)
+We are looking at probabilities of a word to occur given another has occurred.
+
+Hidden Markov models are used to decode the hidden states of a word. The hidden states of a word are basically its part of speech. Basically identify if word is noun, verb, adverb in the context of the sentence.
+
+
+Given a corpus, we populate 2 matrices- 
+Transition matrix and emission matrix
+Transition matrix: probabilities of a tag(part of speech) to occur after another
+Emission matrix:  Has the probabilities for each word to be a certain tag
+
+
+Viterbi algorithm
+(its actually a graph algorithm)
+
+-------------------------------------------------------------------------------------------------------------
+
+Transition matrix : computes the number of times each tag happened next to another tag.
+
+Emission counts : Compute probability of word given its tag 
+
+-------------------------------------------------------------------------------------------------------------
+
+Auto-completion
+
+N-grams are used to predict the probability of the next word. Hence depending on the probabilities, suggestions for the next words are made. We use concepts of "conditional probability".
+
+P(B|A) = P(A and B) / P(A)
+
+Probability of a sequence (sentence occurring in the given order):
+P(the teacher drinks tea) = P(the) P(teacher|the) P(drinks|the teacher) P(tea|the teacher drinks)
+
+The problem with this approach : But the exact sentence is very unlikely to occur in out training corpus.
+
+Markov assumption: It approximates sequence probability. only last N words matter
+
+-------------------------------------------------------------------------------------------------------------
+To deal with words which havent been seen before (theyre not present in the train corpus), we treat them as <UNK> for unknown.
+-------------------------------------------------------------------------------------------------------------
+Word embeddings (word vectors)
 
 
